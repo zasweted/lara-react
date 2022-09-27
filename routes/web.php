@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SquareController as S;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,6 +29,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::inertia('/red-square', 'RedSquare');
+Route::get('/red-square', [S::class, 'redSquare']);
+Route::get('/red-square-blade', [S::class, 'redSquareBlade']);
+
 
 require __DIR__.'/auth.php';
