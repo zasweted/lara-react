@@ -30,6 +30,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/red-square', [S::class, 'redSquare']);
+Route::post('/add-square', [S::class, 'addSquare']);
+Route::get('/get-square', [S::class, 'getSquare']);
+Route::delete('/reset-square', [S::class, 'resetSquare']);
+
+
+
+
+//add-square
+
 Route::get('/red-square-blade', [S::class, 'redSquareBlade']);
 
 
